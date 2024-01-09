@@ -1,11 +1,8 @@
-body {
-    background: url(../img/bg.jpg)no-repeat center/cover;
-}
-
 .form-container {
-    margin: 20px 0;
+    background: url(../img/bg.jpg)no-repeat center/cover;
+    padding: 20px 0;
     width: 100%;
-    height: auto;
+    min-height: calc(100vh - 56px);
     background-position: center;
     background-size: cover;
     display: flex;

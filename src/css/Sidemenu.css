@@ -1,0 +1,24 @@
+#sidebarMenu {
+    /* background:`url("/static/media/home-bg.34f3b0a4010921ee3770.png") 2% 0% / cover` */
+    background: linear-gradient(45deg, #1A237E, #880e0e);
+}
+
+.nav-item {
+    background: #ffffff82;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+
+.nav-link{
+   color: black;
+}
+
+.sidebar-heading{
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+a strong{
+    color: aliceblue;
+}
