@@ -13,3 +13,12 @@
 .row {
   display: flex;
 }
+
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}

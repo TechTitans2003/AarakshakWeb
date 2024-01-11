@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Navbar() {
+export default function Navbar(props) {
 
     const path = window.location.pathname;
 
@@ -21,9 +21,9 @@ export default function Navbar() {
                 >
                     <span className='navbar-toggler-icon'></span>
                 </button>
-                <span className='navbar-brand'>
+                <span className='navbar-brand' style={{marginLeft: `10px`}}>
                     <strong>
-                        <span className='logo-full'></span>
+                        <span className='logo-full'>{props.title}</span>
                     </strong>
                 </span>
                 <div className='navbar-nav'>

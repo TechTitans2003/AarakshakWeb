@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Login() {
+export default function Login(props) {
     return (
         <>
             <nav className="navbar navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">
+                    <a className="navbar-brand" href="/">
                         <img src="" alt="Logo" style={{marginRight:`6px`}} width="30" height="24" className="d-inline-block align-text-top" />
-                        Bootstrap
+                        {props.title}
                     </a>
                 </div>
             </nav>

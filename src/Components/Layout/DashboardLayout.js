@@ -1,60 +1,36 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import img from '../../img/formBg.jpg';
+// import { Outlet } from 'react-router-dom';
 
 export default function DashboardLayout() {
     return (
         <>
-      <main className='col-md-9 ms-sm-auto col-lg-10 px-md-4'>
-        <div className='d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom'>
-          <h1 className='h2'>Dashboard</h1>
-          <div className='btn-toolbar mb-2 mb-md-0'>
-            <div className='btn-group me-2'>
-              <button
-                type='button'
-                className='btn btn-sm btn-outline-secondary'
-              >
-                Share
-              </button>
-              <button
-                type='button'
-                className='btn btn-sm btn-outline-secondary'
-              >
-                Download Usage
-              </button>
+            <div className="card mb-3" style={{ width: `300px` }} >
+                <img src={img} alt="" />
+                <div className="card-body bg-dark">
+                    <h5 className="card-title" style={{ color: `white` }}>Zonal Cam - 1</h5>
+                    <p className="card-text">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                            See More Details
+                        </button>
+                    </p>
+                    {/* <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p> */}
+                </div>
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Zonal - 1 Camera</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <img src={img} alt="" className='canvas-cam' />
+                        <p>
+                            <p>Location : <span></span></p>
+                            <p>Total Triggers : <span></span></p>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <button
-              type='button'
-              className='btn btn-sm btn-outline-secondary dropdown-toggle'
-            >
-              <span
-                data-feather='calendar'
-                className='align-text-bottom'
-              ></span>
-              This week
-            </button>
-          </div>
-        </div>
 
-        <div className='container-fluid'>
-          <div className="heading">
-            <h2></h2>
-          </div>
-          <div className="card my-4">
-            <div className="card-body d-flex">
-              <Link to="/panel/dashboard/zone_A" className="card border-secondary nav-link">
-                <h5>Zone-A</h5>
-              </Link>
-              <Link to="/panel/dashboard/zone_B" className="card border-secondary nav-link">
-                <h5>Zone-B</h5>
-              </Link>
-              <Link to="/panel/dashboard/zone_C" className="card border-secondary nav-link">
-                <h5>Zone-C</h5>
-              </Link>
-            </div>
-          </div>
-          <Outlet />
-        </div>
-
-      </main>        </>
+        </>
     )
 }

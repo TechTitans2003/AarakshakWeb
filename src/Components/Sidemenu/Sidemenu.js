@@ -21,9 +21,9 @@ export default function Sidemenu() {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link className='nav-link' to='/panel/usage'>
+                            <Link className='nav-link' to='/panel/zonalcam'>
                                 <span data-feather='file' className='align-text-bottom'></span>
-                                Energy Consumption
+                                Zonal Cameras
                             </Link>
                         </li>
                         <li className='nav-item'>
@@ -32,10 +32,25 @@ export default function Sidemenu() {
                                     data-feather='shopping-cart'
                                     className='align-text-bottom'
                                 ></span>
-                                Saving Methods
+                                Video Detection
                             </Link>
                         </li>
                         <li className='nav-item'>
+                            <Link className='nav-link' to='/panel/energycalculator'>
+                                <span
+                                    data-feather='bar-chart-2'
+                                    className='align-text-bottom'
+                                ></span>
+                                Triggers
+                            </Link>
+                        </li>
+                        <li className='nav-item'>
+                            <Link className='nav-link' to='/panel/integrations'>
+                                <span data-feather='layers' className='align-text-bottom'></span>
+                                Live Stream
+                            </Link>
+                        </li>
+                        {/* <li className='nav-item'>
                             <div className='nav-link d-flex'>
                                 <span data-feather='users' className='align-text-bottom'></span>
                                 <Link
@@ -74,22 +89,7 @@ export default function Sidemenu() {
                                     </Link>
                                 </div>
                             </div>
-                        </li>
-                        <li className='nav-item'>
-                            <Link className='nav-link' to='/panel/energycalculator'>
-                                <span
-                                    data-feather='bar-chart-2'
-                                    className='align-text-bottom'
-                                ></span>
-                                Energy Calculator
-                            </Link>
-                        </li>
-                        <li className='nav-item'>
-                            <Link className='nav-link' to='/panel/integrations'>
-                                <span data-feather='layers' className='align-text-bottom'></span>
-                                Integrations
-                            </Link>
-                        </li>
+                        </li> */}
                     </ul>
 
                     <h6 className='sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase'>
@@ -97,7 +97,7 @@ export default function Sidemenu() {
                     </h6>
                     <ul className='nav flex-column mb-2'>
                         <li className='nav-item'>
-                            <a className='nav-link'>
+                            <a className='nav-link' href='/'>
                                 <span
                                     data-feather='file-text'
                                     className='align-text-bottom'
@@ -106,7 +106,7 @@ export default function Sidemenu() {
                             </a>
                         </li>
                         <li className='nav-item'>
-                            <a className='nav-link' href='#'>
+                            <a className='nav-link' href='/'>
                                 <span
                                     data-feather='file-text'
                                     className='align-text-bottom'
@@ -115,7 +115,7 @@ export default function Sidemenu() {
                             </a>
                         </li>
                         <li className='nav-item'>
-                            <a className='nav-link' href='#'>
+                            <a className='nav-link' href='/'>
                                 <span
                                     data-feather='file-text'
                                     className='align-text-bottom'
@@ -124,7 +124,7 @@ export default function Sidemenu() {
                             </a>
                         </li>
                         <li className='nav-item'>
-                            <a className='nav-link' href='#'>
+                            <a className='nav-link' href='/'>
                                 <span
                                     data-feather='file-text'
                                     className='align-text-bottom'

@@ -1,6 +1,7 @@
 #sidebarMenu {
     /* background:`url("/static/media/home-bg.34f3b0a4010921ee3770.png") 2% 0% / cover` */
     background: linear-gradient(45deg, #1A237E, #880e0e);
+    min-height: calc(100vh - 54px);
 }
 
 .nav-item {
