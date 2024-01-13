@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     BrowserRouter as Router,
     Routes,
@@ -35,12 +35,31 @@ import Videouploader from './Components/VideoUploader/Videouploader';
 // Data Context
 import DataState from './Context/Data/Datastate';
 
+// Firebase Config File
+import { auth } from './Firebase';
+
 // Img logo
 import logo from './img/assets/logo.png';
 
 function App() {
 
     const title = 'आरक्षक';
+
+    const [userName, setUserName] = useState("");
+
+    useEffect(() => {
+      auth.onAuthStateChanged((user) => {
+        if (user){
+            setUserName(user.displayName)
+        }
+        else(
+            setUserName("")
+        )
+        // console.log(user);
+      })
+    
+    }, [])
+    
 
     return (
         <div className='App'>
@@ -51,7 +70,7 @@ function App() {
                         <Route path='/' element={<Login title={title} logo={logo} />} />
                         <Route path='/login' element={<Login title={title} logo={logo} />} />
                         <Route path='/signUp' element={<SignUp title={title} logo={logo} />} />
-                        <Route path='/panel' element={<PanelLayout title={title} />} >
+                        <Route path='/panel' element={<PanelLayout title={title} useName={userName} />} >
                             <Route path='/panel/dashboard' element={<DashboardLayout />} />
                             <Route path='/panel/zonalcam' element={<ZonalCamLayout />}>
                                 <Route path='/panel/zonalcam/*' element={<Zone />} />
