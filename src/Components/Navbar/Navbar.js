@@ -4,7 +4,7 @@ export default function Navbar(props) {
 
     const path = window.location.pathname;
 
-    if (path === '/' || path === '/login' || path === '/signUp') {
+    if (path === '/' || path === '/login' || path === '/signup') {
         return null;
     }
     return (

@@ -47,7 +47,7 @@ import sound from './audio/alert.wav';
 function App() {
 
     const title = 'आरक्षक';
-
+    const location = window.location;
     // const { showAlert } = useGlobalData();
 
     const [userName, setUserName] = useState("");
@@ -66,9 +66,12 @@ function App() {
     }, [])
 
     const alertSound = () => {
-        let aud = new Audio(sound);
+        if (location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login') {
+            return;
+        }
+        // let aud = new Audio(sound);
         toast.error(`hii you are here`);
-        aud.play();
+        // aud.play();
     }
 
     alertSound();
@@ -81,7 +84,7 @@ function App() {
                     <Routes>
                         <Route path='/' element={<Login title={title} logo={logo} />} />
                         <Route path='/login' element={<Login title={title} logo={logo} />} />
-                        <Route path='/signUp' element={<SignUp title={title} logo={logo} />} />
+                        <Route path='/signup' element={<SignUp title={title} logo={logo} />} />
                         <Route path='/panel' element={<PanelLayout title={title} useName={userName} />} >
                             <Route path='/panel/dashboard' element={<DashboardLayout />} />
                             <Route path='/panel/zonalcam' element={<ZonalCamLayout />}>
