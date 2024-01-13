@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 // Toastify For Alerts
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // CSS
@@ -41,25 +41,37 @@ import { auth } from './Firebase';
 // Img logo
 import logo from './img/assets/logo.png';
 
+// Audio
+import sound from './audio/alert.wav';
+
 function App() {
 
     const title = 'आरक्षक';
 
+    // const { showAlert } = useGlobalData();
+
     const [userName, setUserName] = useState("");
 
     useEffect(() => {
-      auth.onAuthStateChanged((user) => {
-        if (user){
-            setUserName(user.displayName)
-        }
-        else(
-            setUserName("")
-        )
-        // console.log(user);
-      })
-    
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                setUserName(user.displayName)
+            }
+            else (
+                setUserName("")
+            )
+            // console.log(user);
+        })
+
     }, [])
-    
+
+    const alertSound = () => {
+        let aud = new Audio(sound);
+        toast.error(`hii you are here`);
+        aud.play();
+    }
+
+    alertSound();
 
     return (
         <div className='App'>
