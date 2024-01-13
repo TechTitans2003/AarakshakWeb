@@ -22,3 +22,13 @@
 .left {
   text-align: left;
 }
+
+/* LOGIN */
+.logo-align{
+  margin-right: 6px;
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

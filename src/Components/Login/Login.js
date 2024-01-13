@@ -7,8 +7,8 @@ export default function Login(props) {
             <nav className="navbar navbar-dark bg-dark">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">
-                        <img src="" alt="Logo" style={{marginRight:`6px`}} width="30" height="24" className="d-inline-block align-text-top" />
-                        {props.title}
+                        <img src={props.logo} alt="Logo" width="20" height="24" className="d-inline-block align-text-top logo-align" />
+                        <span  style={{marginLeft:`34px`}}>{props.title}</span>
                     </a>
                 </div>
             </nav>

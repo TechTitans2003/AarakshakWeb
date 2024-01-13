@@ -27,7 +27,7 @@ export default function Sidemenu() {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link className='nav-link' to='/panel/savingmethods'>
+                            <Link className='nav-link' to='/panel/videouploader'>
                                 <span
                                     data-feather='shopping-cart'
                                     className='align-text-bottom'

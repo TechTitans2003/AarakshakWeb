@@ -1,11 +1,13 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
+    BrowserRouter as Router,
+    Routes,
+    Route,
 } from 'react-router-dom';
-// import { ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+
+// Toastify For Alerts
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // CSS
 import './css/App.css';
@@ -26,37 +28,59 @@ import ZoneB from './Components/Zone/ZoneB';
 import ZoneC from './Components/Zone/ZoneC';
 import ZoneD from './Components/Zone/ZoneD';
 import ZoneE from './Components/Zone/ZoneE';
+import Zone from './Components/Zone/Zone';
+import Videouploader from './Components/VideoUploader/Videouploader';
 // import Dashboard from './Components/Dashboard/Dashboard';
 
+// Data Context
+import DataState from './Context/Data/Datastate';
+
+// Img logo
+import logo from './img/assets/logo.png';
 
 function App() {
 
-  const title = 'आरक्षक';
+    const title = 'आरक्षक';
 
-  return (
-    <div className='App'>
-      <Router>
-        <Navbar title={title} />
-        <Routes>
-          <Route path='/' element={<Login title={title} />} />
-          <Route path='/login' element={<Login  title={title} />} />
-          <Route path='/signUp' element={<SignUp title={title} />} />
-          <Route path='/panel' element={<PanelLayout title={title} />} >
-            <Route path='/panel/dashboard' element={<DashboardLayout />} />
-            <Route path='/panel/zonalcam' element={<ZonalCamLayout />}>
-              <Route path='/panel/zonalcam/*' element={`Select Zone To View Cameras`} />
-              <Route path='/panel/zonalcam' element={`Select Zone To View Cameras`} />
-              <Route path='/panel/zonalcam/zonea' element={<ZoneA />} />
-              <Route path='/panel/zonalcam/zoneb' element={<ZoneB />} />
-              <Route path='/panel/zonalcam/zonec' element={<ZoneC />} />
-              <Route path='/panel/zonalcam/zoned' element={<ZoneD />} />
-              <Route path='/panel/zonalcam/zonee' element={<ZoneE />} />
-            </Route>
-          </Route>
-        </Routes>
-      </Router>
-    </div>
-  );
+    return (
+        <div className='App'>
+            <DataState>
+                <Router>
+                    <Navbar title={title} logo={logo} />
+                    <Routes>
+                        <Route path='/' element={<Login title={title} logo={logo} />} />
+                        <Route path='/login' element={<Login title={title} logo={logo} />} />
+                        <Route path='/signUp' element={<SignUp title={title} logo={logo} />} />
+                        <Route path='/panel' element={<PanelLayout title={title} />} >
+                            <Route path='/panel/dashboard' element={<DashboardLayout />} />
+                            <Route path='/panel/zonalcam' element={<ZonalCamLayout />}>
+                                <Route path='/panel/zonalcam/*' element={<Zone />} />
+                                <Route path='/panel/zonalcam' element={<Zone />} />
+                                <Route path='/panel/zonalcam/zonea' element={<ZoneA />} />
+                                <Route path='/panel/zonalcam/zoneb' element={<ZoneB />} />
+                                <Route path='/panel/zonalcam/zonec' element={<ZoneC />} />
+                                <Route path='/panel/zonalcam/zoned' element={<ZoneD />} />
+                                <Route path='/panel/zonalcam/zonee' element={<ZoneE />} />
+                            </Route>
+                            <Route path='/panel/videouploader' element={<Videouploader />} />
+                        </Route>
+                    </Routes>
+                </Router>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={10000}
+                    hideProgressBar={false}
+                    closeOnClick={true}
+                    pauseOnHover={false}
+                    pauseOnFocusLoss={false}
+                    draggable={true}
+                    progress={undefined}
+                    theme="colored"
+                    type="error"
+                />
+            </DataState>
+        </div>
+    );
 }
 
 export default App;

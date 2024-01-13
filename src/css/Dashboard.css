@@ -1,3 +1,9 @@
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .offcanvas-body .canvas-cam {
     width: 90%;
 }

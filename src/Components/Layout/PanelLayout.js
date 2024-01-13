@@ -29,6 +29,9 @@ export default function PanelLayout(props) {
         else if (location.pathname === '/panel/zonalcam/zonee') {
             setPage('Zone Details - Zone-E');
         }
+        else if (location.pathname === '/panel/videouploader') {
+            setPage('Video Detector - Upload your Video');
+        }
     }
     
     useEffect(() => {

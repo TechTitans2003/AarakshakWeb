@@ -22,8 +22,9 @@ export default function Navbar(props) {
                     <span className='navbar-toggler-icon'></span>
                 </button>
                 <span className='navbar-brand' style={{marginLeft: `10px`}}>
+                <img src={props.logo} alt="Logo" width="20" height="24" className="d-inline-block align-text-top logo-align" />
                     <strong>
-                        <span className='logo-full'>{props.title}</span>
+                        <span className='logo-full' style={{marginLeft:`34px`}}>{props.title}</span>
                     </strong>
                 </span>
                 <div className='navbar-nav'>
