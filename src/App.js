@@ -41,6 +41,7 @@ import { auth } from './Firebase';
 
 // Img logo
 import logo from './img/assets/logo.png';
+import NotFound from './Components/404NotFound/NotFound';
 
 // Audio
 // import sound from './audio/alert.wav';
@@ -49,9 +50,9 @@ function App() {
 
     const title = 'आरक्षक';
     // const { showAlert } = useGlobalData();
-    
+
     const [userName, setUserName] = useState("");
-    
+
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
             if (user) {
@@ -64,10 +65,10 @@ function App() {
         })
 
     }, [])
-    
-    
+
+
     useEffect(() => {
-        
+
         const location = window.location;
         const alertSound = () => {
             if (location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login') {
@@ -102,7 +103,9 @@ function App() {
                                 <Route path='/panel/zonalcam/zonee' element={<ZoneE />} />
                             </Route>
                             <Route path='/panel/videouploader' element={<Videouploader />} />
+                            <Route path='*' element={<NotFound />} />
                         </Route>
+                        <Route path='*' element={<NotFound />} />
                     </Routes>
                 </Router>
                 <ToastContainer
