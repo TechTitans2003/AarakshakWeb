@@ -44,12 +44,6 @@ export default function Sidemenu() {
                                 Triggers
                             </Link>
                         </li>
-                        <li className='nav-item'>
-                            <Link className='nav-link' to='/panel/integrations'>
-                                <span data-feather='layers' className='align-text-bottom'></span>
-                                Live Stream
-                            </Link>
-                        </li>
                         {/* <li className='nav-item'>
                             <div className='nav-link d-flex'>
                                 <span data-feather='users' className='align-text-bottom'></span>

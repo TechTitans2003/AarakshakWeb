@@ -9,14 +9,14 @@ import 'firebase/storage';
 // import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAIErp6lsivbbzLkfLs1Hi-1_BHt3v6OFs",
-  authDomain: "object-detection-4b3de.firebaseapp.com",
-  databaseURL: "https://object-detection-4b3de-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "object-detection-4b3de",
-  storageBucket: "object-detection-4b3de.appspot.com",
-  messagingSenderId: "595470443083",
-  appId: "1:595470443083:web:a0763a88bee3d31f6d23ce",
-  measurementId: "G-PTKQ2H406Q"
+  apiKey: "AIzaSyA3VQDU2Jz7he6gZGmSPzcTGEKP2GKaFD4",
+  authDomain: "aarakshak-web-rtdb.firebaseapp.com",
+  databaseURL: "https://aarakshak-web-rtdb-default-rtdb.firebaseio.com",
+  projectId: "aarakshak-web-rtdb",
+  storageBucket: "aarakshak-web-rtdb.appspot.com",
+  messagingSenderId: "939793000074",
+  appId: "1:939793000074:web:50d12274acfbac77206f73",
+  measurementId: "G-GYSPC1PGR4"
 };
 
 // Initialize Firebase
