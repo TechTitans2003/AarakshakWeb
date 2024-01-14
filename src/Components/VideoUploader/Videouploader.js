@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { v4 } from 'uuid';
 import { ref, uploadBytes } from 'firebase/storage';
 import { storage } from '../../Firebase';
@@ -8,6 +8,7 @@ export default function VideoUploader() {
 
     const [file, setFile] = useState(null);
     const [progress, setProgress] = useState("");
+    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     const handleChange = (e) => {
         setFile(e.target.files[0]);
@@ -27,10 +28,19 @@ export default function VideoUploader() {
         })
     }
 
+    useEffect(() => {
+        if (!file) {
+            setButtonDisabled(true);
+            return;
+        }
+        setButtonDisabled(false);
+    }, [file])
+    
+
     return (
         <div className='upload-container'>
             <input className='custom-file-input' type="file" onChange={handleChange} />
-            <button className='btn btn-success' onClick={handleUpload}>Upload Video</button>
+            <button disabled={buttonDisabled} className='btn btn-success' onClick={handleUpload}>Upload Video</button>
             <div>{progress > 0 && `Progress: ${progress.toFixed(2)}%`}</div>
         </div>
     );
