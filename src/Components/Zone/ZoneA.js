@@ -4,12 +4,12 @@ import { useGlobalData } from '../../Context/Data/Datastate';
 
 export default function ZoneA() {
 
-    const { getCurrentDate, getCurrentTime } = useGlobalData();
+    const { getCurrentDate } = useGlobalData();
     const [time, setTime] = useState("")
     const currTime = new Date().toLocaleTimeString();
     setInterval(() => {
         setTime(currTime) 
-    }, 1000);
+    }, 2000);
     
     return (
         <>
