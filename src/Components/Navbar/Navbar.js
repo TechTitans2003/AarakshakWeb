@@ -1,8 +1,10 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function Navbar(props) {
 
-    const path = window.location.pathname;
+    const location = useLocation();
+    const path = location.pathname;
 
     if (path === '/' || path === '/login' || path === '/signup') {
         return null;
