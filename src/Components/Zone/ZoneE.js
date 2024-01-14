@@ -35,13 +35,13 @@ export default function ZoneE() {
                 </div>
                 <div className="zone-det">
                     <h3>Location : <span></span></h3>
-                    <p>
+                    <div>
                         <p className='left'>Total Triggers : <span></span></p>
                         <p className='left'>Total Criminal Record : <span></span></p>
                         <p className='left'>Current Time : <span style={{fontWeight:`800`}}>
                             {time} &nbsp;--&nbsp; {getCurrentDate()}
                         </span></p>
-                    </p>
+                    </div>
                 </div>
             </div>
         </>
