@@ -15,6 +15,7 @@ import './css/Form.css';
 import './css/Sidemenu.css';
 import './css/Dashboard.css';
 import './css/Zone.css';
+import './css/VideoUploader.css';
 
 // Elements
 import Navbar from './Components/Navbar/Navbar';
@@ -47,11 +48,10 @@ import logo from './img/assets/logo.png';
 function App() {
 
     const title = 'आरक्षक';
-    const location = window.location;
     // const { showAlert } = useGlobalData();
-
+    
     const [userName, setUserName] = useState("");
-
+    
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
             if (user) {
@@ -64,17 +64,22 @@ function App() {
         })
 
     }, [])
+    
+    
+    useEffect(() => {
+        
+        const location = window.location;
+        const alertSound = () => {
+            if (location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login') {
+                return;
+            }
+            // let aud = new Audio(sound);
+            toast.error(`hii you are here`);
+            // aud.play();
+        }
+        alertSound();
 
-    // const alertSound = () => {
-    //     if (location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login') {
-    //         return;
-    //     }
-    //     // let aud = new Audio(sound);
-    //     toast.error(`hii you are here`);
-    //     // aud.play();
-    // }
-
-    // alertSound();
+    }, []);
 
     return (
         <div className='App'>
