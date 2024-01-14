@@ -6,7 +6,7 @@ export default function ZoneC() {
 
     const { getCurrentDate } = useGlobalData();
     const [time, setTime] = useState("")
-    const currTime = new Date().toLocaleTimeString();
+    const currTime = new Date().toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
     setInterval(() => {
         setTime(currTime)
     }, 2000);
@@ -38,8 +38,8 @@ export default function ZoneC() {
                     <p>
                         <p className='left'>Total Triggers : <span></span></p>
                         <p className='left'>Total Criminal Record : <span></span></p>
-                        <p className='left'>Current Time : <span>
-                            {time} -- {getCurrentDate()}
+                        <p className='left'>Current Time : <span style={{fontWeight:`800`}}>
+                            {time} &nbsp;--&nbsp; {getCurrentDate()}
                         </span></p>
                     </p>
                 </div>
