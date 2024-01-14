@@ -1,6 +1,9 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { child, get, getDatabase, ref } from 'firebase/database';
+// import { arrayUnion, doc, updateDoc } from 'firebase/firestore/lite';
+import { doc, updateDoc } from 'firebase/firestore/lite';
+import { db } from '../../Firebase';
 
 
 const DataContext = createContext();
@@ -27,31 +30,6 @@ const DataState = (props) => {
             return;
         }
     };
-    // eslint-disable-next-line
-    const [detection, setDetection] = useState("");
-
-    function readData(dir, stateName) {
-        const dbRef = ref(getDatabase());
-        get(child(dbRef, `${dir}/`))
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    // console.log(snapshot.val());
-
-                    stateName(snapshot.val());
-                    // showAlert(collection,  dir);
-                } else {
-                    console.log('No data available');
-                }
-            })
-            .then(() => {
-                // console.log('Loading Done');
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }
-
-
 
     const getCurrentDate = (separator = '-') => {
 
@@ -75,10 +53,56 @@ const DataState = (props) => {
         return (`${hour}${separator}${min}${separator}${sec}`);
     }
 
+
+    // eslint-disable-next-line
+    const [detection, setDetection] = useState("");
+
+    function readData(dir, stateName) {
+        const dbRef = ref(getDatabase());
+        get(child(dbRef, `${dir}/`))
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    console.log(snapshot.val());
+
+                    stateName(snapshot.val());
+                    // showAlert(collection,  dir);
+                    writeData(detection, `detection`, `object`);
+                } else {
+                    console.log('No data available');
+                }
+            })
+            .then(() => {
+                // console.log('Loading Done');
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+    async function writeData(value, collectionName, equipment) {
+        try {
+            const tempRef = doc(db, collectionName, equipment);
+            // console.log({ tempRef });
+
+            await updateDoc(tempRef, {
+                current: value,
+                // power: arrayUnion({
+                //     x: value['ActivePower'],
+                //     y: new Date().toISOString(),
+                // }),
+            });
+        } catch (err) {
+            console.error(err.message);
+        }
+    }
+
+
     useEffect(() => {
-        readData('detection_results', setDetection);
+        readData('detection', setDetection);
         // setDate(getCurrentDate());
         // console.log(JSON.stringify(detection));
+
+        // eslint-disable-next-line
     }, [])
 
 

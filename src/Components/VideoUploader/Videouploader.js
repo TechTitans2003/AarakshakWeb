@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { storage } from '../../Firebase';
 import { v4 } from 'uuid';
 import { ref, uploadBytes } from 'firebase/storage';
+import { storage } from '../../Firebase';
+
 
 export default function VideoUploader() {
 
