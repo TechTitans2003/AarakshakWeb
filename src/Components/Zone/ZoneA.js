@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import img from '../../img/assets/camera.png';
+import { useGlobalData } from '../../Context/Data/Datastate';
 
 export default function ZoneA() {
+
+    const { getCurrentDate, getCurrentTime } = useGlobalData();
+    const [time, setTime] = useState("")
+    const currTime = new Date().toLocaleTimeString();
+    setInterval(() => {
+        setTime(currTime) 
+    }, 1000);
+    
     return (
         <>
             <div className="zone-view">
@@ -25,11 +34,14 @@ export default function ZoneA() {
                 </div>
                 <div className="zone-det">
                     <h3>Location : <span></span></h3>
-                    <p>
+                    <div>
                         <p className='left'>Total Triggers : <span></span></p>
                         <p className='left'>Total Criminal Record : <span></span></p>
-                        <p className='left'>Current Time : <span></span></p>
-                    </p>
+                        <p className='left'>Current Time : <span>{time}
+                        --
+                        {getCurrentDate()}
+                        </span></p>
+                    </div>
                 </div>
             </div>
         </>

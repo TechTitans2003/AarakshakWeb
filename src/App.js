@@ -42,7 +42,7 @@ import { auth } from './Firebase';
 import logo from './img/assets/logo.png';
 
 // Audio
-import sound from './audio/alert.wav';
+// import sound from './audio/alert.wav';
 
 function App() {
 
@@ -65,16 +65,16 @@ function App() {
 
     }, [])
 
-    const alertSound = () => {
-        if (location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login') {
-            return;
-        }
-        // let aud = new Audio(sound);
-        toast.error(`hii you are here`);
-        // aud.play();
-    }
+    // const alertSound = () => {
+    //     if (location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login') {
+    //         return;
+    //     }
+    //     // let aud = new Audio(sound);
+    //     toast.error(`hii you are here`);
+    //     // aud.play();
+    // }
 
-    alertSound();
+    // alertSound();
 
     return (
         <div className='App'>

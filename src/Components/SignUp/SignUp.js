@@ -38,7 +38,7 @@ export default function SignUp(props) {
             })
             .catch((err) => {
                 setSubmitButtonDisabled(false)
-                console.log("ERROR - ", err.message);
+                // console.log("ERROR - ", err.message);
                 setErrorMsg(err.message);
             });
     }
