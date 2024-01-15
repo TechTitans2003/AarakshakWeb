@@ -107,6 +107,13 @@ const DataState = (props) => {
 
     const [showAlert, setShowAlert] = useState(false);
     
+    useEffect(() => {
+      setTimeout(() => {
+        setShowAlert(true);
+      }, 5000);
+    })
+    
+
     const state = {
         showAlert,
         setShowAlert,
