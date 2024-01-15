@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom';
 
 // Toastify For Alerts
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 // CSS
 import './css/App.css';
@@ -31,6 +31,7 @@ import ZoneD from './Components/Zone/ZoneD';
 import ZoneE from './Components/Zone/ZoneE';
 import Zone from './Components/Zone/Zone';
 import Videouploader from './Components/VideoUploader/Videouploader';
+import Alert from './Components/Alert/Alert';
 // import Dashboard from './Components/Dashboard/Dashboard';
 
 // Data Context
@@ -69,16 +70,16 @@ function App() {
 
     useEffect(() => {
 
-        const location = window.location;
-        const alertSound = () => {
-            if (location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login') {
-                return;
-            }
-            // let aud = new Audio(sound);
-            toast.error(`Alert : PISTOL is detected in ZONE-`);
-            // aud.play();
-        }
-        alertSound();
+        // const location = window.location;
+        // const alertSound = () => {
+        //     if (location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login') {
+        //         return;
+        //     }
+        //     // let aud = new Audio(sound);
+        //     toast.error(`Alert : PISTOL is detected in ZONE-A`);
+        //     // aud.play();
+        // }
+        // alertSound();
 
     }, []);
 
@@ -87,6 +88,7 @@ function App() {
             <DataState>
                 <Router>
                     <Navbar title={title} logo={logo} />
+                    <Alert />
                     <Routes>
                         <Route path='/' element={<Login title={title} logo={logo} />} />
                         <Route path='/login' element={<Login title={title} logo={logo} />} />
@@ -108,18 +110,6 @@ function App() {
                         <Route path='*' element={<NotFound />} />
                     </Routes>
                 </Router>
-                <ToastContainer
-                    position="top-center"
-                    autoClose={10000}
-                    hideProgressBar={false}
-                    closeOnClick={true}
-                    pauseOnHover={false}
-                    pauseOnFocusLoss={false}
-                    draggable={true}
-                    progress={undefined}
-                    theme="colored"
-                    type="error"
-                />
             </DataState>
         </div>
     );

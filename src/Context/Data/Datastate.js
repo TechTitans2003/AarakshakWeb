@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
 import { child, get, getDatabase, ref } from 'firebase/database';
 // import { arrayUnion, doc, updateDoc } from 'firebase/firestore/lite';
 import { doc, updateDoc } from 'firebase/firestore/lite';
@@ -14,22 +13,22 @@ export function useGlobalData() {
 
 const DataState = (props) => {
 
-    const showAlert = (device, message) => {
-        // console.log({ device, message });
-        // if (sameAlert) {
-        //   return;
-        // }
-        // setSameAlert(true);
-        const path = window.location.pathname;
-        if (path === '/login' || path === '/signup' || path === '/') {
-            // console.log(path);
-            return;
-        }
-        else {
-            toast.error(`${device} ${message}`);
-            return;
-        }
-    };
+    // const showAlert = (device, message) => {
+    //     // console.log({ device, message });
+    //     // if (sameAlert) {
+    //     //   return;
+    //     // }
+    //     // setSameAlert(true);
+    //     const path = window.location.pathname;
+    //     if (path === '/login' || path === '/signup' || path === '/') {
+    //         // console.log(path);
+    //         return;
+    //     }
+    //     else {
+    //         toast.error(`${device} ${message}`);
+    //         return;
+    //     }
+    // };
 
     const getCurrentDate = (separator = '-') => {
 
@@ -106,10 +105,11 @@ const DataState = (props) => {
     }, [detection])
 
 
-
-
+    const [showAlert, setShowAlert] = useState(false);
+    
     const state = {
         showAlert,
+        setShowAlert,
         getCurrentDate,
         getCurrentTime
     };
