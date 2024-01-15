@@ -103,7 +103,7 @@ const DataState = (props) => {
         // console.log(JSON.stringify(detection));
 
         // eslint-disable-next-line
-    }, [])
+    }, [detection])
 
 
 
