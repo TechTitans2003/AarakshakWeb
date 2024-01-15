@@ -75,7 +75,7 @@ function App() {
                 return;
             }
             // let aud = new Audio(sound);
-            toast.error(`hii you are here`);
+            toast.error(`Alert : PISTOL is detected in ZONE-`);
             // aud.play();
         }
         alertSound();
