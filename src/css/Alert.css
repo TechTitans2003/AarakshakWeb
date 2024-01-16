@@ -32,6 +32,8 @@
 .alert-container>h3 {
     color: white;
     font-weight: 700;
+    display: block;
+    width: 100%;
 }
 
 .alert-container>div>p {

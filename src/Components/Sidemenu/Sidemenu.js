@@ -36,7 +36,7 @@ export default function Sidemenu() {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link className='nav-link' to='/panel/energycalculator'>
+                            <Link className='nav-link' to='/panel/triggers'>
                                 <span
                                     data-feather='bar-chart-2'
                                     className='align-text-bottom'

@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { child, get, getDatabase, ref } from 'firebase/database';
 // import { arrayUnion, doc, updateDoc } from 'firebase/firestore/lite';
-import { arrayUnion, doc, updateDoc } from 'firebase/firestore/lite';
+import { arrayUnion, doc, getDoc, updateDoc } from 'firebase/firestore/lite';
 import { db } from '../../Firebase';
 
 
@@ -13,22 +13,24 @@ export function useGlobalData() {
 
 const DataState = (props) => {
 
-    // const showAlert = (device, message) => {
-    //     // console.log({ device, message });
-    //     // if (sameAlert) {
-    //     //   return;
-    //     // }
-    //     // setSameAlert(true);
-    //     const path = window.location.pathname;
-    //     if (path === '/login' || path === '/signup' || path === '/') {
-    //         // console.log(path);
-    //         return;
-    //     }
-    //     else {
-    //         toast.error(`${device} ${message}`);
-    //         return;
-    //     }
-    // };
+    
+        // const showAlert = (device, message) => {
+        //     // console.log({ device, message });
+        //     // if (sameAlert) {
+        //     //   return;
+        //     // }
+        //     // setSameAlert(true);
+        //     const path = window.location.pathname;
+        //     if (path === '/login' || path === '/signup' || path === '/') {
+        //         // console.log(path);
+        //         return;
+        //     }
+        //     else {
+        //         toast.error(`${device} ${message}`);
+        //         return;
+        //     }
+        // };
+    
 
     const getCurrentDate = (separator = '-') => {
 
@@ -61,7 +63,7 @@ const DataState = (props) => {
         get(child(dbRef, `${dir}/`))
             .then((snapshot) => {
                 if (snapshot.exists()) {
-                    console.log(snapshot.val());
+                    // console.log(snapshot.val());
 
                     stateName(snapshot.val());
                     // showAlert(collection,  dir);
@@ -97,31 +99,59 @@ const DataState = (props) => {
         }
     }
 
+    const [triggers, setTriggers] = useState([]);
+
+    // fuction to read or fetch data from firestore
+    const fetchData = async (collection, subCollection, param) => {
+        try {
+            const docRef = doc(db, `${collection}`, `${subCollection}`);
+            // const docRef = doc(db, `${collection}`);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                // console.log("Document data:", docSnap.data()) ;
+                param(docSnap.data());
+            } else {
+                console.log('No such document!');
+            }
+        } catch (error) {
+            console.error('Error fetching document:', error);
+        }
+    };
 
     useEffect(() => {
         readData('Detection_Results', setDetection);
-        // setDate(getCurrentDate());
-        // console.log(JSON.stringify(detection));
 
         // eslint-disable-next-line
     }, [detection])
 
+    const [data, setData] = useState(triggers['details']);
+    useEffect(() => {
+        fetchData('detection', 'object', setTriggers);
+        setData(triggers['details'])
+        // console.log(triggers['details']);        
+
+        // eslint-disable-next-line
+    }, [triggers])
+
 
     const [showAlert, setShowAlert] = useState(false);
-    
+
     useEffect(() => {
-    //   setTimeout(() => {
+        //   setTimeout(() => {
         setShowAlert(true);
-    //   }, 5000);
-    },[])
-    
+        //   }, 5000);
+    }, [])
+
 
     const state = {
         showAlert,
         setShowAlert,
         getCurrentDate,
         getCurrentTime,
-        detection
+        detection,
+        triggers,
+        data
     };
 
     return (

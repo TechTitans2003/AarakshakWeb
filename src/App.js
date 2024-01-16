@@ -43,6 +43,7 @@ import { auth } from './Firebase';
 // Img logo
 import logo from './img/assets/logo.png';
 import NotFound from './Components/404NotFound/NotFound';
+import Triggers from './Components/Triggers/Triggers';
 
 // Audio
 // import sound from './audio/alert.wav';
@@ -105,6 +106,7 @@ function App() {
                                 <Route path='/panel/zonalcam/zonee' element={<ZoneE />} />
                             </Route>
                             <Route path='/panel/videouploader' element={<Videouploader />} />
+                            <Route path='/panel/triggers' element={<Triggers />} />
                             <Route path='*' element={<NotFound />} />
                         </Route>
                         <Route path='*' element={<NotFound />} />

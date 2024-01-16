@@ -7,11 +7,10 @@ import '../../css/Alert.css';
 // import img from '../../img/bg.jpg';
 
 export default function Alert() {
-
-    const img = 'https://firebasestorage.googleapis.com/v0/b/aarakshak-web-rtdb.appspot.com/o/alert-img%2Fdetection.jpg?alt=media&token=65efbe64-0ed8-40ef-9c55-9093eac4c1c9';
-
+    
+    
     const { showAlert, setShowAlert, detection } = useGlobalData();
-
+    
     const hideAlert = () => {
         setShowAlert(false);
     }
@@ -22,7 +21,7 @@ export default function Alert() {
         {document.body.style.overflowY = `scroll`;}
         else
         {document.body.style.overflowY = `hidden`;}
-
+        
     }, [showAlert])
 
     const location = useLocation();
@@ -41,17 +40,20 @@ export default function Alert() {
         <>
             <div className="alert-background-container"></div>
             <div className="alert-container">
-                <h3>Alert Weapon Detected</h3>
-                <img src={img} alt="" />
+                <h3 className='center' >Alert Weapon Detected</h3>
+                <img src={detection.ImageURL} alt="" />
                 <div>
                     <p>
-                        At Location : <span>{detection.Location}</span>
+                        Weapon : <span>{detection['Class Label']}</span>
+                    </p>
+                    <p>
+                        At Location : <a href={detection.Location} target='_Blank'>Click Here To View On Map</a>
                     </p>
                     <p>
                         Time : <span>{detection.Time}</span>
                     </p>
                     <p>
-                        Weapon : <span>{detection['Class Label']}</span>
+                        Date : <span>{detection.Date}</span>
                     </p>
                 </div>
                 <div onClick={hideAlert} className="alert-close-btn">x</div>

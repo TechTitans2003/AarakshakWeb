@@ -32,14 +32,20 @@ export default function PanelLayout(props) {
         else if (location.pathname === '/panel/videouploader') {
             setPage('Video Detector - Upload your Video');
         }
+        else if (location.pathname === '/panel/triggers') {
+            setPage('Triggers - Old Alerts');
+        }
+        else {
+            setPage('You Lost Your Way');
+        }
     }
-    
+
     useEffect(() => {
         pageName();
         console.log(location.pathname);
         // eslint-disable-next-line
-    },[location.pathname])
-    
+    }, [location.pathname])
+
 
 
     return (
