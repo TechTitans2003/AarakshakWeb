@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import '../../css/Alert.css';
-import img from '../../img/bg.jpg';
 import { useGlobalData } from '../../Context/Data/Datastate';
 import { useLocation } from 'react-router-dom';
 
+import '../../css/Alert.css';
+// import img from '../../img/bg.jpg';
+
 export default function Alert() {
+
+    const img = 'https://firebasestorage.googleapis.com/v0/b/aarakshak-web-rtdb.appspot.com/o/alert-img%2Fbg.jpg?alt=media&token=350e274e-8a95-4b74-9fd6-8eefaaed9381';
 
     const { showAlert, setShowAlert, detection } = useGlobalData();
 
