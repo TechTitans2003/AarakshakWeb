@@ -2,7 +2,7 @@ import React from 'react';
 import { useGlobalData } from '../../Context/Data/Datastate';
 
 import '../../css/Triggers.css';
-import img from '../../img/assets/bg.jpg';
+import img from 'https://firebasestorage.googleapis.com/v0/b/aarakshak-web-rtdb.appspot.com/o/alert-img%2Fdetection.jpg?alt=media&token=65efbe64-0ed8-40ef-9c55-9093eac4c1c9';
 
 export default function Triggers() {
 
