@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 
 export default function Alert() {
 
-    const { showAlert, setShowAlert } = useGlobalData();
+    const { showAlert, setShowAlert, detection } = useGlobalData();
 
     const hideAlert = () => {
         setShowAlert(false);
@@ -29,6 +29,9 @@ export default function Alert() {
     if (path === '/' || path === '/login' || path === '/signup') {
         return null;
     }
+    if (detection['Class Label'] === 'Unknown' || detection['Class Label'] == null) {
+        return;
+    }
     // return (
     return ReactDOM.createPortal(
         showAlert &&
@@ -39,13 +42,13 @@ export default function Alert() {
                 <img src={img} alt="" />
                 <div>
                     <p>
-                        At Location : <span></span>
+                        At Location : <span>{detection.Location}</span>
                     </p>
                     <p>
-                        Time : <span></span>
+                        Time : <span>{detection.Time}</span>
                     </p>
                     <p>
-                        Weapon : <span></span>
+                        Weapon : <span>{detection['Class Label']}</span>
                     </p>
                 </div>
                 <div onClick={hideAlert} className="alert-close-btn">x</div>

@@ -97,7 +97,7 @@ const DataState = (props) => {
 
 
     useEffect(() => {
-        readData('detection', setDetection);
+        readData('Detection_Results', setDetection);
         // setDate(getCurrentDate());
         // console.log(JSON.stringify(detection));
 
@@ -108,9 +108,9 @@ const DataState = (props) => {
     const [showAlert, setShowAlert] = useState(false);
     
     useEffect(() => {
-      setTimeout(() => {
+    //   setTimeout(() => {
         setShowAlert(true);
-      }, 5000);
+    //   }, 5000);
     })
     
 
@@ -118,7 +118,8 @@ const DataState = (props) => {
         showAlert,
         setShowAlert,
         getCurrentDate,
-        getCurrentTime
+        getCurrentTime,
+        detection
     };
 
     return (
