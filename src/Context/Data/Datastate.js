@@ -111,7 +111,7 @@ const DataState = (props) => {
     //   setTimeout(() => {
         setShowAlert(true);
     //   }, 5000);
-    })
+    },[])
     
 
     const state = {
