@@ -8,7 +8,7 @@ import '../../css/Alert.css';
 
 export default function Alert() {
 
-    const img = 'https://firebasestorage.googleapis.com/v0/b/aarakshak-web-rtdb.appspot.com/o/alert-img%2Fbg.jpg?alt=media&token=350e274e-8a95-4b74-9fd6-8eefaaed9381';
+    const img = 'https://firebasestorage.googleapis.com/v0/b/aarakshak-web-rtdb.appspot.com/o/alert-img%2Fdetection.jpg?alt=media&token=65efbe64-0ed8-40ef-9c55-9093eac4c1c9';
 
     const { showAlert, setShowAlert, detection } = useGlobalData();
 
