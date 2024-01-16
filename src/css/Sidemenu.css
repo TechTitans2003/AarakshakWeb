@@ -23,3 +23,9 @@
 a strong{
     color: aliceblue;
 }
+
+@media screen and (max-width: 468px) {
+    #sidebarMenu {
+        min-height: auto;
+    }
+}

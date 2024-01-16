@@ -1,7 +1,12 @@
 import React from 'react';
+import { CSVLink } from 'react-csv';
 import { Link } from 'react-router-dom';
+import { useGlobalData } from '../../Context/Data/Datastate';
 
 export default function Sidemenu() {
+
+    const { data } = useGlobalData();
+
     return (
         <>
             <nav
@@ -91,40 +96,13 @@ export default function Sidemenu() {
                     </h6>
                     <ul className='nav flex-column mb-2'>
                         <li className='nav-item'>
-                            <a className='nav-link' href='/'>
+                            <span className='nav-link' >
                                 <span
                                     data-feather='file-text'
                                     className='align-text-bottom'
                                 ></span>
-                                Current month
-                            </a>
-                        </li>
-                        <li className='nav-item'>
-                            <a className='nav-link' href='/'>
-                                <span
-                                    data-feather='file-text'
-                                    className='align-text-bottom'
-                                ></span>
-                                Last quarter
-                            </a>
-                        </li>
-                        <li className='nav-item'>
-                            <a className='nav-link' href='/'>
-                                <span
-                                    data-feather='file-text'
-                                    className='align-text-bottom'
-                                ></span>
-                                Social engagement
-                            </a>
-                        </li>
-                        <li className='nav-item'>
-                            <a className='nav-link' href='/'>
-                                <span
-                                    data-feather='file-text'
-                                    className='align-text-bottom'
-                                ></span>
-                                Year-end sale
-                            </a>
+                                <CSVLink className='nav-link' data={ data } >Download Report</CSVLink>
+                            </span>
                         </li>
                     </ul>
                 </div>
