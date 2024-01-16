@@ -8,16 +8,15 @@ import 'firebase/storage';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA3VQDU2Jz7he6gZGmSPzcTGEKP2GKaFD4",
-  authDomain: "aarakshak-web-rtdb.firebaseapp.com",
-  databaseURL: "https://aarakshak-web-rtdb-default-rtdb.firebaseio.com",
-  projectId: "aarakshak-web-rtdb",
-  storageBucket: "aarakshak-web-rtdb.appspot.com",
-  messagingSenderId: "939793000074",
-  appId: "1:939793000074:web:50d12274acfbac77206f73",
-  measurementId: "G-GYSPC1PGR4"
+  apiKey: "AIzaSyC7zQhz-BT1YrYk8thwZELC6YOYXy6a3YY",
+  authDomain: "tensor-flow-detection.firebaseapp.com",
+  databaseURL: "https://tensor-flow-detection-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "tensor-flow-detection",
+  storageBucket: "tensor-flow-detection.appspot.com",
+  messagingSenderId: "349194461419",
+  appId: "1:349194461419:web:31f27137a27ab0fb159eae",
+  measurementId: "G-3H019E02L0"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);

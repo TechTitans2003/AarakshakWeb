@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { child, get, getDatabase, ref } from 'firebase/database';
 // import { arrayUnion, doc, updateDoc } from 'firebase/firestore/lite';
-import { doc, updateDoc } from 'firebase/firestore/lite';
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore/lite';
 import { db } from '../../Firebase';
 
 
@@ -84,11 +84,13 @@ const DataState = (props) => {
             // console.log({ tempRef });
 
             await updateDoc(tempRef, {
-                current: value,
-                // power: arrayUnion({
-                //     x: value['ActivePower'],
-                //     y: new Date().toISOString(),
-                // }),
+                // current: value,
+                details: arrayUnion({
+                    label: value['Class Label'],
+                    Time: value['Time'],
+                    Date: value['Date'],
+                    Location: value['Location']
+                }),
             });
         } catch (err) {
             console.error(err.message);
