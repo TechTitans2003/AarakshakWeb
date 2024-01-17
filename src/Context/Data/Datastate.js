@@ -147,9 +147,9 @@ const DataState = (props) => {
     }
     
     useEffect(() => {
-        // setInterval(() => {
+        setInterval(() => {
             alert();
-        // }, 10000);
+        }, 10000);
 
         // eslint-desable-next-line
     },[])
