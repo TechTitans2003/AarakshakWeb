@@ -6,7 +6,10 @@
 }
 
 .trigger-element {
-    border: 1px solid;
+    border: 1px solid black;
+    border-radius: 4px;
+    /* background: rgba(199, 198, 197, 0.685); */
+    background: linear-gradient(45deg, #1A237E91, #880e0e91);
     display: flex;
     justify-content: space-around;
     align-items: center;
