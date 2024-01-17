@@ -133,23 +133,23 @@ const DataState = (props) => {
 
     
     const alert = () => {
-        if (detection['Class Label'] === null) {
-            return;
-        }
-        if (detection['Class Label'] === alertCheck.label && detection.Time === alertCheck.Time) {
-            return;
-        }
-        else {
+        // if (detection['Class Label'] === null) {
+        //     return;
+        // }
+        // if (detection['Class Label'] === alertCheck.label && detection.Time === alertCheck.Time) {
+        //     return;
+        // }
+        // else {
             setShowAlert(true);
             alertCheckWriteData(detection, `alertChecker`, `values`);
-        }
-        return;
+        // }
+        // return;
     }
     
     useEffect(() => {
         setInterval(() => {
             alert();
-        }, 10000);
+        }, 15000);
 
         // eslint-desable-next-line
     },[])
