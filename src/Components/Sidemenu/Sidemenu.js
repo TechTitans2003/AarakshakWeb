@@ -7,13 +7,6 @@ export default function Sidemenu() {
 
     const { data } = useGlobalData();
 
-    if (!data) {
-        return (
-            <>
-            <p>Loading...</p>
-            </>
-        )
-    }
 
     return (
         <>

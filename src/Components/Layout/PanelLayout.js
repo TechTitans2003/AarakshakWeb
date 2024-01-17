@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Sidemenu from '../Sidemenu/Sidemenu';
 import { Outlet, useLocation } from 'react-router-dom';
+import { useGlobalData } from '../../Context/Data/Datastate';
 
 export default function PanelLayout(props) {
+
+    const { data } = useGlobalData();
 
     const [page, setPage] = useState('');
 
@@ -48,6 +51,13 @@ export default function PanelLayout(props) {
 
 
 
+    if (!data) {
+        return (
+            <>
+            <p style={{color: `black`}}> Loading ... .</p>
+            </>
+        )
+    }
     return (
         <>
             <div className='container-fluid'>

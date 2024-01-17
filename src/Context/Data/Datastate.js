@@ -126,12 +126,11 @@ const DataState = (props) => {
     }, [detection])
 
     const [data, setData] = useState(triggers['details']);
+
     useEffect(() => {
         fetchData('detection', 'object', setTriggers);
         setData(triggers['details'])
         // console.log(triggers['details']);        
-
-        // eslint-disable-next-line
     }, [triggers])
 
 
@@ -151,7 +150,7 @@ const DataState = (props) => {
         getCurrentTime,
         detection,
         triggers,
-        data
+        data,
     };
 
     return (

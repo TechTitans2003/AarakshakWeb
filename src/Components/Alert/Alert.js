@@ -41,13 +41,13 @@ export default function Alert() {
             <div className="alert-background-container"></div>
             <div className="alert-container">
                 <h3 className='center' >Alert Weapon Detected</h3>
-                <img src={detection.ImageURL} alt="" />
+                <img src={detection.ImageURL} alt={`Weapon ${detection['Class Label']} detected`} />
                 <div>
                     <p>
                         Weapon : <span>{detection['Class Label']}</span>
                     </p>
                     <p>
-                        At Location : <a href={detection.Location} target='_Blank'>Click Here To View On Map</a>
+                        At Location : <a href={detection.Location} target='_Blank' rel="noopener noreferrer">Click Here To View On Map</a>
                     </p>
                     <p>
                         Time : <span>{detection.Time}</span>

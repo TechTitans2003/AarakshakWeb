@@ -51,7 +51,6 @@ import Triggers from './Components/Triggers/Triggers';
 function App() {
 
     const title = 'आरक्षक';
-    // const { showAlert } = useGlobalData();
 
     const [userName, setUserName] = useState("");
 
@@ -83,6 +82,7 @@ function App() {
         // alertSound();
 
     }, []);
+    
 
     return (
         <div className='App'>

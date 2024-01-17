@@ -28,7 +28,7 @@ export default function Triggers() {
                             Date: <span>{item.Date}</span>
                         </p>
                         <p>
-                            Location: <a href={item.Location}>Click Here To View Location</a>
+                            Location: <a href={item.Location} target='_Blank' rel="noopener noreferrer">Click Here To View Location</a>
                         </p>
                     </div>
                     <div className="trigger-img">
