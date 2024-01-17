@@ -4,7 +4,7 @@ import { useGlobalData } from '../../Context/Data/Datastate';
 import { useLocation } from 'react-router-dom';
 import '../../css/Alert.css';
 
-// import aud from './alert.mp3';
+import aud from './alert.mp3';
 
 export default function Alert() {
     const { showAlert, setShowAlert, detection } = useGlobalData();
@@ -43,6 +43,7 @@ export default function Alert() {
         showAlert && (
             <>
                 <div className="alert-background-container"></div>
+                <audio src={aud} loop autoPlay></audio>
                 <div className="alert-container">
                     <h3 className="center">Alert Weapon Detected</h3>
                     <img src={detection.ImageURL} alt={`Weapon ${detection['Class Label']} detected`} />
