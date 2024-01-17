@@ -4,7 +4,6 @@ import { child, get, getDatabase, ref } from 'firebase/database';
 import { arrayUnion, doc, getDoc, updateDoc } from 'firebase/firestore/lite';
 import { db } from '../../Firebase';
 
-
 const DataContext = createContext();
 
 export function useGlobalData() {
@@ -12,25 +11,6 @@ export function useGlobalData() {
 }
 
 const DataState = (props) => {
-
-    
-        // const showAlert = (device, message) => {
-        //     // console.log({ device, message });
-        //     // if (sameAlert) {
-        //     //   return;
-        //     // }
-        //     // setSameAlert(true);
-        //     const path = window.location.pathname;
-        //     if (path === '/login' || path === '/signup' || path === '/') {
-        //         // console.log(path);
-        //         return;
-        //     }
-        //     else {
-        //         toast.error(`${device} ${message}`);
-        //         return;
-        //     }
-        // };
-    
 
     const getCurrentDate = (separator = '-') => {
 
@@ -54,8 +34,6 @@ const DataState = (props) => {
         return (`${hour}${separator}${min}${separator}${sec}`);
     }
 
-
-    // eslint-disable-next-line
     const [detection, setDetection] = useState("");
 
     function readData(dir, stateName) {
@@ -119,6 +97,22 @@ const DataState = (props) => {
         }
     };
 
+    async function alertCheckWriteData(value, collectionName, equipment) {
+        try {
+            const tempRef = doc(db, collectionName, equipment);
+            // console.log({ tempRef });
+
+            await updateDoc(tempRef, {
+                // current: value,
+                label: value['Class Label'],
+                Time: value['Time'],
+                Date: value['Date'],
+            });
+        } catch (err) {
+            console.error(err.message);
+        }
+    }
+
     useEffect(() => {
         readData('Detection_Results', setDetection);
 
@@ -126,26 +120,45 @@ const DataState = (props) => {
     }, [detection])
 
     const [data, setData] = useState(triggers['details']);
+    const [alertCheck, setAlertCheck] = useState([]);
 
     useEffect(() => {
         fetchData('detection', 'object', setTriggers);
+        fetchData('alertChecker', 'values', setAlertCheck);
         setData(triggers['details'])
         // console.log(triggers['details']);        
     }, [triggers])
 
-
     const [showAlert, setShowAlert] = useState(false);
 
+    
+    const alert = () => {
+        if (detection['Class Label'] === null) {
+            return;
+        }
+        if (detection['Class Label'] === alertCheck.label && detection.Time === alertCheck.Time) {
+            return;
+        }
+        else {
+            setShowAlert(true);
+            alertCheckWriteData(detection, `alertChecker`, `values`);
+        }
+        return;
+    }
+    
     useEffect(() => {
-        //   setTimeout(() => {
-        setShowAlert(true);
-        //   }, 5000);
-    }, [])
+        // setInterval(() => {
+            alert();
+        // }, 10000);
+
+        // eslint-desable-next-line
+    },[])
 
 
     const state = {
         showAlert,
         setShowAlert,
+        alert,
         getCurrentDate,
         getCurrentTime,
         detection,
