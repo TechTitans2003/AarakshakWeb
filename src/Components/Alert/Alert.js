@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { useGlobalData } from '../../Context/Data/Datastate';
 import { useLocation } from 'react-router-dom';
-import '../../css/Alert.css';
 
+import '../../css/Alert.css';
 import aud from './alert.mp3';
+
+import gun from './gun.jpg';
+import knife from './knife.jpg';
+import pistol from './pistol.jpg';
 
 export default function Alert() {
     const { showAlert, setShowAlert, detection } = useGlobalData();
@@ -15,18 +19,31 @@ export default function Alert() {
 
     // const audio = useRef()
 
+    const [imgUrl, setImgUrl] = useState('');
+
     useEffect(() => {
 
         if (showAlert === false) {
             window.document.body.style.overflowY = 'scroll';
         } else {
             window.document.body.style.overflowY = 'hidden';
-            // setTimeout(_ => {
-            //     console.log('hii');
-            //     audio.current.play();
-            // },1000)
         }
+        //eslint-disable-next-line
     }, [showAlert]);
+
+    useEffect(() => {
+        if (detection['Class Label'] === 'Gun') {
+            setImgUrl(gun);
+        }
+        if (detection['Class Label'] === 'Pistol') {
+            setImgUrl(pistol);
+        }
+        if (detection['Class Label'] === 'Knife') {
+            setImgUrl(knife);
+        }
+    
+    }, [detection]);
+    
 
 
     const location = useLocation();
@@ -46,7 +63,7 @@ export default function Alert() {
                 <audio src={aud} loop autoPlay></audio>
                 <div className="alert-container">
                     <h3 className="center">Alert Weapon Detected</h3>
-                    <img src={detection.ImageURL} alt={`Weapon ${detection['Class Label']} detected`} />
+                    <img src={imgUrl} alt={`Weapon ${detection['Class Label']} detected`} />
                     <div>
                         <p>
                             Weapon : <span>{detection['Class Label']}</span>
