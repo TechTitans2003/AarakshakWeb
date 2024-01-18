@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom';
 import { useGlobalData } from '../../Context/Data/Datastate';
 import { useLocation } from 'react-router-dom';
 
+// CSS
 import '../../css/Alert.css';
+
+// Audio
 import aud from './alert.mp3';
 
+// Images
 import gun from './gun.jpg';
 import knife from './knife.jpg';
 import pistol from './pistol.jpg';
+import alertImg from './alert.png';
 
 export default function Alert() {
     const { showAlert, setShowAlert, detection } = useGlobalData();
@@ -35,11 +40,14 @@ export default function Alert() {
         if (detection['Class Label'] === 'Gun') {
             setImgUrl(gun);
         }
-        if (detection['Class Label'] === 'Pistol') {
+        else if (detection['Class Label'] === 'Pistol') {
             setImgUrl(pistol);
         }
-        if (detection['Class Label'] === 'Knife') {
+        else if (detection['Class Label'] === 'Knife') {
             setImgUrl(knife);
+        }
+        else {
+            setImgUrl(alertImg);
         }
     
     }, [detection]);
