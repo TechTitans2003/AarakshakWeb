@@ -6,28 +6,28 @@ import { getFirestore } from 'firebase/firestore/lite';
 import { getStorage } from "firebase/storage";
 import 'firebase/storage';
 
+// rizwan
+const firebaseConfig = {
+  apiKey: "AIzaSyDIui3lDPhfxUDMfQ6Uzzfi46ro-vbHDx4",
+  authDomain: "aarakshak-web-rph.firebaseapp.com",
+  databaseURL: "https://aarakshak-web-rph-default-rtdb.firebaseio.com",
+  projectId: "aarakshak-web-rph",
+  storageBucket: "aarakshak-web-rph.appspot.com",
+  messagingSenderId: "842820936593",
+  appId: "1:842820936593:web:829f95e2aaf7e26158f030",
+  measurementId: "G-PDYJXL6VV4"
+};
 
 // const firebaseConfig = {
-//   apiKey: "AIzaSyC7zQhz-BT1YrYk8thwZELC6YOYXy6a3YY",
-//   authDomain: "tensor-flow-detection.firebaseapp.com",
-//   databaseURL: "https://tensor-flow-detection-default-rtdb.asia-southeast1.firebasedatabase.app",
-//   projectId: "tensor-flow-detection",
-//   storageBucket: "tensor-flow-detection.appspot.com",
-//   messagingSenderId: "349194461419",
-//   appId: "1:349194461419:web:31f27137a27ab0fb159eae",
-//   measurementId: "G-3H019E02L0"
+//   apiKey: "AIzaSyC40kHqnUpWwF1fRaHVvqFoYTTMVnz7vH4",
+//   authDomain: "aarakshak-web-firebase.firebaseapp.com",
+//   databaseURL: "https://aarakshak-web-firebase-default-rtdb.firebaseio.com",
+//   projectId: "aarakshak-web-firebase",
+//   storageBucket: "aarakshak-web-firebase.appspot.com",
+//   messagingSenderId: "234094021667",
+//   appId: "1:234094021667:web:1b97a029e7459d40573596",
+//   measurementId: "G-0MNR8Q423E"
 // };
-
-const firebaseConfig = {
-  apiKey: "AIzaSyC40kHqnUpWwF1fRaHVvqFoYTTMVnz7vH4",
-  authDomain: "aarakshak-web-firebase.firebaseapp.com",
-  databaseURL: "https://aarakshak-web-firebase-default-rtdb.firebaseio.com",
-  projectId: "aarakshak-web-firebase",
-  storageBucket: "aarakshak-web-firebase.appspot.com",
-  messagingSenderId: "234094021667",
-  appId: "1:234094021667:web:1b97a029e7459d40573596",
-  measurementId: "G-0MNR8Q423E"
-};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

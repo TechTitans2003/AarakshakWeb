@@ -67,7 +67,6 @@ export default function Alert() {
                     <div onClick={hideAlert} className="alert-close-btn">
                         x
                     </div>
-                    {/* <audio ref={audio} src={aud} muted ></audio> */}
                 </div>
             </>
         ),
