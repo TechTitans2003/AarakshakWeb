@@ -52,6 +52,12 @@
     text-align: center;
     border-radius: 0 10px 0 0;
     cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.alert-container>.alert-close-btn:hover {
+    background: #3e0b05;
+    /* font-size: 20px; */
 }
 
 @media screen and (max-width: 480px) {
