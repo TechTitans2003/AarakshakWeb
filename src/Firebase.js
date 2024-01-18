@@ -8,14 +8,14 @@ import 'firebase/storage';
 
 // rizwan
 const firebaseConfig = {
-  apiKey: "AIzaSyDIui3lDPhfxUDMfQ6Uzzfi46ro-vbHDx4",
-  authDomain: "aarakshak-web-rph.firebaseapp.com",
-  databaseURL: "https://aarakshak-web-rph-default-rtdb.firebaseio.com",
-  projectId: "aarakshak-web-rph",
-  storageBucket: "aarakshak-web-rph.appspot.com",
-  messagingSenderId: "842820936593",
-  appId: "1:842820936593:web:829f95e2aaf7e26158f030",
-  measurementId: "G-PDYJXL6VV4"
+  apiKey: "AIzaSyC7zQhz-BT1YrYk8thwZELC6YOYXy6a3YY",
+  authDomain: "tensor-flow-detection.firebaseapp.com",
+  databaseURL: "https://tensor-flow-detection-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "tensor-flow-detection",
+  storageBucket: "tensor-flow-detection.appspot.com",
+  messagingSenderId: "349194461419",
+  appId: "1:349194461419:web:31f27137a27ab0fb159eae",
+  measurementId: "G-3H019E02L0"
 };
 
 // const firebaseConfig = {
