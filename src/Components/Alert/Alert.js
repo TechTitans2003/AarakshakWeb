@@ -60,7 +60,7 @@ export default function Alert() {
     if (path === '/' || path === '/login' || path === '/signup') {
         return null;
     }
-    if (detection['Class Label'] === 'Unknown' || detection['Class Label'] == null) {
+    if (detection['Class Label'] === 'Unknown' || detection['Class Label'] == null || detection['Class Label'] === 'null' || detection['Class Label'] === "") {
         return null;
     }
 

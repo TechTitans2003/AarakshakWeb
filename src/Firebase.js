@@ -19,14 +19,14 @@ const firebaseConfig = {
 };
 
 // const firebaseConfig = {
-//   apiKey: "AIzaSyC40kHqnUpWwF1fRaHVvqFoYTTMVnz7vH4",
-//   authDomain: "aarakshak-web-firebase.firebaseapp.com",
-//   databaseURL: "https://aarakshak-web-firebase-default-rtdb.firebaseio.com",
-//   projectId: "aarakshak-web-firebase",
-//   storageBucket: "aarakshak-web-firebase.appspot.com",
-//   messagingSenderId: "234094021667",
-//   appId: "1:234094021667:web:1b97a029e7459d40573596",
-//   measurementId: "G-0MNR8Q423E"
+//   apiKey: "AIzaSyBREplZoXoO6ssvF0mRf967t_XR1xz_YmM",
+//   authDomain: "detection-object-e0b3d.firebaseapp.com",
+//   databaseURL: "https://detection-object-e0b3d-default-rtdb.asia-southeast1.firebasedatabase.app",
+//   projectId: "detection-object-e0b3d",
+//   storageBucket: "detection-object-e0b3d.appspot.com",
+//   messagingSenderId: "235367490831",
+//   appId: "1:235367490831:web:8be5ad7a793677b7d64a7a",
+//   measurementId: "G-81D6X0TG7P"
 // };
 
 // Initialize Firebase

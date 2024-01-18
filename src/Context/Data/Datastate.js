@@ -117,7 +117,7 @@ const DataState = (props) => {
         readData('Detection_Results', setDetection);
 
         // eslint-disable-next-line
-    }, [detection])
+    }, [triggers])
 
     const [data, setData] = useState(triggers['details']);
     const [alertCheck, setAlertCheck] = useState([]);
