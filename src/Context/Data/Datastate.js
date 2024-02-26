@@ -152,7 +152,7 @@ const DataState = (props) => {
         }, 15000);
 
         // eslint-desable-next-line
-    },[])
+    })
 
 
     const state = {

@@ -29,7 +29,7 @@ export default function Alert() {
     useEffect(() => {
 
         if (showAlert === false) {
-            window.document.body.style.overflowY = 'scroll';
+            window.document.body.style.overflowY = 'auto';
         } else {
             window.document.body.style.overflowY = 'hidden';
         }
