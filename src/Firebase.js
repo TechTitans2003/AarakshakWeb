@@ -19,14 +19,13 @@ import 'firebase/storage';
 // };
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBREplZoXoO6ssvF0mRf967t_XR1xz_YmM",
-  authDomain: "detection-object-e0b3d.firebaseapp.com",
-  databaseURL: "https://detection-object-e0b3d-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "detection-object-e0b3d",
-  storageBucket: "detection-object-e0b3d.appspot.com",
-  messagingSenderId: "235367490831",
-  appId: "1:235367490831:web:8be5ad7a793677b7d64a7a",
-  measurementId: "G-81D6X0TG7P"
+  apiKey: "AIzaSyAS8iexr7z-c49CJlZc1NuL9IeTmmDW99k",
+  authDomain: "aarakshak-web-detect.firebaseapp.com",
+  projectId: "aarakshak-web-detect",
+  storageBucket: "aarakshak-web-detect.appspot.com",
+  messagingSenderId: "25100679154",
+  appId: "1:25100679154:web:cfea73001929d9f0835d6b",
+  measurementId: "G-327P0CMB2R"
 };
 
 // Initialize Firebase
