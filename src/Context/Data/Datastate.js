@@ -47,14 +47,14 @@ const DataState = (props) => {
                     // showAlert(collection,  dir);
                     writeData(detection, `detection`, `object`);
                 } else {
-                    console.log('No data available');
+                    // console.log('No data available');
                 }
             })
             .then(() => {
                 // console.log('Loading Done');
             })
             .catch((error) => {
-                console.error(error);
+                // console.error(error);
             });
     }
 
@@ -73,7 +73,7 @@ const DataState = (props) => {
                 }),
             });
         } catch (err) {
-            console.error(err.message);
+            // console.error(err.message);
         }
     }
 
@@ -90,10 +90,10 @@ const DataState = (props) => {
                 // console.log("Document data:", docSnap.data()) ;
                 param(docSnap.data());
             } else {
-                console.log('No such document!');
+                // console.log('No such document!');
             }
         } catch (error) {
-            console.error('Error fetching document:', error);
+            // console.error('Error fetching document:', error);
         }
     };
 
@@ -109,7 +109,7 @@ const DataState = (props) => {
                 Date: value['Date'],
             });
         } catch (err) {
-            console.error(err.message);
+            // console.error(err.message);
         }
     }
 

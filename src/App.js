@@ -19,8 +19,11 @@ import './css/VideoUploader.css';
 
 // Elements
 import Navbar from './Components/Navbar/Navbar';
-import Login from './Components/Login/Login';
-import SignUp from './Components/SignUp/SignUp';
+import Login from './Components/Form/Login';
+import SignUp from './Components/Form/SignUp';
+// import Login from './Components/Login/Login';
+// import SignUp from './Components/SignUp/SignUp';
+import Form from './Components/Layout/InputForm';
 import PanelLayout from './Components/Layout/PanelLayout';
 import DashboardLayout from './Components/Layout/DashboardLayout';
 import ZonalCamLayout from './Components/Layout/ZonalCamLayout';
@@ -82,7 +85,7 @@ function App() {
         // alertSound();
 
     }, []);
-    
+
 
     return (
         <div className='App'>
@@ -91,9 +94,11 @@ function App() {
                     <Navbar title={title} logo={logo} />
                     <Alert />
                     <Routes>
-                        <Route path='/' element={<Login title={title} logo={logo} />} />
-                        <Route path='/login' element={<Login title={title} logo={logo} />} />
-                        <Route path='/signup' element={<SignUp title={title} logo={logo} />} />
+                        {/* <Route path='/' element={<Login title={title} logo={logo} />} /> */}
+                        <Route path='/' element={<Form title={title} logo={logo} />} >
+                            <Route path='/login' element={<Login title={title} logo={logo} />} />
+                            <Route path='/signup' element={<SignUp title={title} logo={logo} />} />
+                        </Route>
                         <Route path='/panel' element={<PanelLayout title={title} useName={userName} />} >
                             <Route path='/panel/dashboard' element={<DashboardLayout />} />
                             <Route path='/panel/zonalcam' element={<ZonalCamLayout />}>
