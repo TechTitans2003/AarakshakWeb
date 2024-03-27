@@ -51,7 +51,7 @@ export default function Login(props) {
                 onChange={(event) =>
                     setValues((prev) => ({ ...prev, email: event.target.value }))
                 }
-                icon='user-circle'
+                icon='at'
             />
 
             <InputControl

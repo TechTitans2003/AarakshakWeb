@@ -278,13 +278,13 @@ img {
         top: -11rem;
         left: -6.5rem;
     }
-
+    
     .shape2 {
         width: 300px;
         height: 300px;
         right: -6.5rem;
     }
-
+    
     .form {
         grid-template-columns: 1.5fr 1fr;
         padding: 0 2rem;
@@ -293,11 +293,22 @@ img {
     .form__content {
         width: 320px;
     }
-
+    
     .form__img {
         display: block;
         width: 800px;
         /* width: 500px; */
         justify-self: center;
+    }
+}
+
+@media screen and (max-width: 968px) {
+
+    .l-form{margin-top: 5rem;}
+    .shape1{
+        /* transform: rotate(180deg); */
+        left: -6.5rem;
+        bottom: -6rem;
+        top: auto;
     }
 }

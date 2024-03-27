@@ -34,7 +34,7 @@ export default function SignUp(props) {
                     displayName: values.name,
                 });
                 setSubmitButtonDisabled(false)
-                navigate("/");
+                navigate("/login");
             })
             .catch((err) => {
                 setSubmitButtonDisabled(false)
