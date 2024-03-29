@@ -310,7 +310,7 @@ img {
 @media screen and (max-width: 968px) {
 
     .l-form {
-        margin-top: 2rem;
+        margin-top: 0;
     }
 
     .shape1 {
