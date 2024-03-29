@@ -21,8 +21,6 @@ import './css/VideoUploader.css';
 import Navbar from './Components/Navbar/Navbar';
 import Login from './Components/Form/Login';
 import SignUp from './Components/Form/SignUp';
-// import Login from './Components/Login/Login';
-// import SignUp from './Components/SignUp/SignUp';
 import Form from './Components/Layout/InputForm';
 import PanelLayout from './Components/Layout/PanelLayout';
 import DashboardLayout from './Components/Layout/DashboardLayout';
@@ -35,7 +33,6 @@ import ZoneE from './Components/Zone/ZoneE';
 import Zone from './Components/Zone/Zone';
 import Videouploader from './Components/VideoUploader/Videouploader';
 import Alert from './Components/Alert/Alert';
-// import Dashboard from './Components/Dashboard/Dashboard';
 
 // Data Context
 import DataState from './Context/Data/Datastate';
@@ -44,7 +41,7 @@ import DataState from './Context/Data/Datastate';
 import { auth } from './Firebase';
 
 // Img logo
-import logo from './img/assets/logo.png';
+import logo from './img/assets/logo-circle.png';
 import NotFound from './Components/404NotFound/NotFound';
 import Triggers from './Components/Triggers/Triggers';
 
