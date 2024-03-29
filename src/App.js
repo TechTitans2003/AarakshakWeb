@@ -19,6 +19,7 @@ import './css/VideoUploader.css';
 
 // Elements
 import Navbar from './Components/Navbar/Navbar';
+import About from './Components/Form/About';
 import Login from './Components/Form/Login';
 import SignUp from './Components/Form/SignUp';
 import Form from './Components/Layout/InputForm';
@@ -93,6 +94,7 @@ function App() {
                     <Routes>
                         {/* <Route path='/' element={<Login title={title} logo={logo} />} /> */}
                         <Route path='/' element={<Form title={title} logo={logo} />} >
+                            <Route path='/' element={<About title={title} logo={logo} />} />
                             <Route path='/login' element={<Login title={title} logo={logo} />} />
                             <Route path='/signup' element={<SignUp title={title} logo={logo} />} />
                         </Route>

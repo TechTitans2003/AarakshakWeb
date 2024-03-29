@@ -64,6 +64,7 @@ export default function Alert() {
         return null;
     }
 
+    return null;
     return ReactDOM.createPortal(
         showAlert && (
             <>
