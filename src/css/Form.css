@@ -286,7 +286,7 @@ img {
         right: -6.5rem;
     }
     
-    .form__content.about-content{
+    .form__content .about-content{
         width: 420px;
     }
 
@@ -310,7 +310,7 @@ img {
 @media screen and (max-width: 968px) {
 
     .l-form {
-        margin-top: 5rem;
+        margin-top: 2rem;
     }
 
     .shape1 {

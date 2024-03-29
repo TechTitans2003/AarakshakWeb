@@ -26,15 +26,15 @@ export default function Alert() {
 
     const [imgUrl, setImgUrl] = useState('');
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        if (showAlert === false) {
-            window.document.body.style.overflowY = 'auto';
-        } else {
-            window.document.body.style.overflowY = 'hidden';
-        }
-        //eslint-disable-next-line
-    }, [showAlert]);
+    //     if (showAlert === false) {
+    //         window.document.body.style.overflowY = 'auto';
+    //     } else {
+    //         window.document.body.style.overflowY = 'hidden';
+    //     }
+    //     //eslint-disable-next-line
+    // }, [showAlert]);
 
     useEffect(() => {
         if (detection['Class Label'] === 'Gun') {

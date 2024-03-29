@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../img/formBg.jpg';
+import img from '../../img/assets/camera.png';
 // import { Outlet } from 'react-router-dom';
 
 export default function DashboardLayout() {
