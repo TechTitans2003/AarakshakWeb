@@ -19,13 +19,14 @@ import 'firebase/storage';
 // };
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAS8iexr7z-c49CJlZc1NuL9IeTmmDW99k",
-  authDomain: "aarakshak-web-detect.firebaseapp.com",
-  projectId: "aarakshak-web-detect",
-  storageBucket: "aarakshak-web-detect.appspot.com",
-  messagingSenderId: "25100679154",
-  appId: "1:25100679154:web:cfea73001929d9f0835d6b",
-  measurementId: "G-327P0CMB2R"
+  apiKey: "AIzaSyC0kIuCmh8zjB5yDDy8wAoOEIJFBTQ6BJI",
+  authDomain: "aarakshak-ai-cam.firebaseapp.com",
+  databaseURL: "https://aarakshak-ai-cam-default-rtdb.firebaseio.com",
+  projectId: "aarakshak-ai-cam",
+  storageBucket: "aarakshak-ai-cam.appspot.com",
+  messagingSenderId: "674119387547",
+  appId: "1:674119387547:web:19c5632e30f6f3b510f93e",
+  measurementId: "G-RDV2DMMWMX"
 };
 
 // Initialize Firebase
